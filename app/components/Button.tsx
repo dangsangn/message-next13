@@ -5,7 +5,7 @@ type Props = {
   type?: "button" | "submit" | "reset" | undefined
   fullWidth?: boolean
   children?: React.ReactNode
-  onClick?: () => {}
+  onClick?: () => void
   disabled?: boolean
   secondary?: boolean
   danger?: boolean

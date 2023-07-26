@@ -2,7 +2,7 @@
 
 import React, { useMemo, useState } from "react"
 import { Conversation, User } from "@prisma/client"
-import { HiChevronLeft } from "react-icons/hi2"
+import { HiChevronLeft, HiEllipsisHorizontal } from "react-icons/hi2"
 import Link from "next/link"
 import { useOtherUser } from "@/app/hooks"
 import { Avatar } from "@/app/components"
@@ -17,6 +17,7 @@ type Props = {
 const Header = ({ conversation }: Props) => {
   const [isOpen, setIsOpen] = useState(false)
   const otherUser = useOtherUser(conversation)
+
   const statusText = useMemo(() => {
     if (conversation.isGroup) {
       return `${conversation.users.length} members`
@@ -47,7 +48,18 @@ const Header = ({ conversation }: Props) => {
           <p className="text-md font-semibold">{otherUser.name}</p>
           <p className="text-sm font-light text-neutral-500">{statusText}</p>
         </div>
-        <div></div>
+        <div className="ml-auto">
+          <HiEllipsisHorizontal
+            size={32}
+            onClick={() => setIsOpen(true)}
+            className="
+          text-sky-500
+          cursor-pointer
+          hover:text-sky-600
+          transition
+        "
+          />
+        </div>
       </div>
     </div>
   )

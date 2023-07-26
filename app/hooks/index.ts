@@ -1,3 +1,5 @@
 export { useOtherUser } from "./useOtherUser"
 export { useRoutes } from "./useRoutes"
 export { useConversation } from "./useConversation"
+export { useActiveList } from "./useActiveList"
+export { useSidebar } from "./useSidebar"

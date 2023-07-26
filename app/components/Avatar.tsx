@@ -11,7 +11,7 @@ const Avatar = ({ user }: Props) => {
       <div className="relative w-9 h-9 md:w-11 md:h-11 rounded-full overflow-hidden">
         <Image
           fill
-          src={user.image || "/images/placeholder.jpg"}
+          src={user?.image || "/images/placeholder.jpg"}
           alt="Avatar"
         />
       </div>
